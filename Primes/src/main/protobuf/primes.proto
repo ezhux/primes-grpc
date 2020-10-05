@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "lt.ezz.primes";
+option java_outer_classname = "PrimesProto";
+
+service PrimesService {
+  rpc GetPrimesUpToNaive (PrimeRequest) returns (stream PrimeReply) {}
+  rpc GetPrimesUpToOptimized (PrimeRequest) returns (stream PrimeReply) {}
+  rpc GetPrimesUpTo (PrimeRequest) returns (stream PrimeReply) {}
+}
+
+message PrimeRequest {
+  int64 upTo = 1;
+}
+
+message PrimeReply {
+  int64 primeNumber = 1;
+}
