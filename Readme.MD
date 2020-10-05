@@ -17,7 +17,7 @@ Calculation of primes is a well known problem, so instead of inventing the wheel
  I have tried out 3 functions for calculating the primes.
 
 1. The most elegant and naive solution, given even in the Scala Streams docs (https://www.scala-lang.org/api/2.7.5/scala/Stream.html) is not tail-recursive and stack-overflows with even quite small inputs. But it's a one-liner and it would work for the example that is given in the task definition, so I've left it under the `/naive/` path.
-2. Then I tried the classical Sieve of Eratosthenes algorithm with some optimizations as described here: https://medium.com/coding-with-clarity/functional-vs-iterative-prime-numbers-in-scala-7e22447146f0. The speedup of the calculation is significant, but it is not lazy and tries to calculate all results before it starts streaming, therefore it runs out of memory with default JVM settings for quite small inputs. Still, it is a nice functional-style solution, so I've left it under the '/optimized` path.
+2. Then I tried the classical Sieve of Eratosthenes algorithm with some optimizations as described here: https://medium.com/coding-with-clarity/functional-vs-iterative-prime-numbers-in-scala-7e22447146f0. The speedup of the calculation is significant, but it is not lazy and tries to calculate all results before it starts streaming, therefore it runs out of memory with default JVM settings for quite small inputs. Still, it is a nice functional-style solution, so I've left it under the `/optimized` path.
 3. The best solution I have found at `https://stackoverflow.com/a/9712460 is tail-recursive`. It is very fast, tail-recursive, but a bit harder to understand. I've chosen it as the `main` implementation.
 
 
